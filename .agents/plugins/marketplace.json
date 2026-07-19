@@ -1,16 +1,16 @@
 {
-  "name": "cognee",
+  "name": "cognee-feyola",
   "interface": {
-    "displayName": "Cognee"
+    "displayName": "Cognee (Feyola)"
   },
   "plugins": [
     {
       "name": "cognee",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/topoteretes/cognee-integrations.git",
+        "url": "https://github.com/feyola/cognee-integrations.git",
         "path": "./integrations/codex/plugins/cognee",
-        "ref": "main"
+        "ref": "codex/fix-codex-plugin-dataset-scope"
       },
       "policy": {
         "installation": "AVAILABLE",
