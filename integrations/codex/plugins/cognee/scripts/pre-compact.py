@@ -122,6 +122,7 @@ async def _recall(
                 scope=scope,
                 only_context=True,
                 search_type=qtype,
+                datasets=[dataset],
             )
         else:
             import cognee

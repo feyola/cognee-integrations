@@ -218,6 +218,7 @@ async def _run(prompt: str) -> dict | None:
     # whole loop stops once the overall budget is spent. Partial results are fine.
     recall_timeout = _float_env("COGNEE_RECALL_TIMEOUT", 2.5)
     budget_deadline = time.monotonic() + _float_env("COGNEE_RECALL_BUDGET", 4.0)
+    plugin_datasets = [get_dataset(config)]
     # Respect the shared circuit breaker: when the server has been failing (tripped
     # by the explicit recall path), skip this per-prompt recall rather than hammering
     # a down backend on every keystroke. HTTP/cloud mode only.
@@ -245,6 +246,7 @@ async def _run(prompt: str) -> dict | None:
                     only_context=True,
                     search_type=qtype,
                     context_profile=context_profile,
+                    datasets=plugin_datasets,
                     timeout=recall_timeout,
                 )
             else:

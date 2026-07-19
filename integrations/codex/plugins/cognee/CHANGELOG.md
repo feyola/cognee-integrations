@@ -10,6 +10,13 @@ is the cache key and semver record, bumped on each release, not the update trigg
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.1-feyola.1]
+
+### Fixed
+- Managed-endpoint prompt recall and pre-compaction recall now send the active
+  plugin dataset to `/api/v1/recall`, preventing unrelated datasets owned by
+  the same Cognee principal from leaking into automatic session context.
+
 ## [1.1.0]
 
 Bundles the arc since the automatic install/server-bootstrap work. Shares most
